@@ -1,0 +1,82 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	char packageSelection; 
+	string packageSubscribedTo;
+	int package, hoursConsumed, monthlyBill, hours, additionalHoursCalculation;
+
+	const int packageAHours = 10, packageBHours = 20, packageCHours = 0, additionalHoursA = 20, additionalHoursB = 10, additionalHoursC = 0;
+
+	cout <<"|Internet Monthly Bill Calculator|";
+	cout << endl;
+	cout << endl;
+	cout <<"The following are the available packages that we have:\n";
+	cout <<"[Package A]: For P995/mo 10 hrs of access are provided. Additional hours are P20/hr.\n";
+	cout <<"[Package B]: For P1495/mo 20 hrs of access are provided. Additional hours are P10/hr.\n";
+	cout <<"[Package C]: For P1995/mo of unlimited access is provided.\n";
+	cout << endl;
+	cout <<"Please indicate the package which corresponds to your subscription to our services (A, B, or C): ";
+	cin >> packageSelection;
+
+	if (packageSelection == 'a') 
+		package = 995;
+	else if (packageSelection == 'A')
+		package = 995;
+	else if (packageSelection == 'b')
+		package = 1495;
+	else if (packageSelection == 'B')
+		package = 1495;
+	else if (packageSelection == 'c')
+		package = 1995;
+	else if (packageSelection == 'C')
+		package = 1995;
+	else
+		cout <<"Invalid package! Please input a choice from the available selection only.";
+
+	cout <<"Please identify the number of hours of access which you have consumed in the span of your subscription: ";
+	cin >> hoursConsumed;
+	cout << endl;
+	cout << endl;
+
+	if (package == 995)
+		packageSubscribedTo = "Package A";
+	if (package == 1495)
+		packageSubscribedTo = "Package B";
+	if (package == 1995)
+		packageSubscribedTo = "Package C";
+
+	cout <<"[SUMMARY]";
+	cout << endl;
+	cout << endl;
+	cout <<"The package which you have indicated to be subscribed to is " << packageSubscribedTo;
+	cout << endl;
+	cout <<"The amount of time which you have used during the extent of your subscription is " << hoursConsumed << " hours.";
+	cout << endl;
+	cout << endl;
+
+	if (package == 995)
+		hours = packageAHours;
+	if (package == 1495)
+		hours = packageBHours;
+	if (package == 1995)
+		hours = packageCHours;
+
+	if (package == 995)
+		additionalHoursCalculation = additionalHoursA;
+	if (package == 1495)
+		additionalHoursCalculation = additionalHoursB;
+	if (package == 1995)
+		additionalHoursCalculation = additionalHoursC;
+
+	monthlyBill = package + ((hoursConsumed - hours) * additionalHoursCalculation);
+
+	cout <<"[Your calculated monthly bill is: PhP " << monthlyBill << "]";
+
+	_getch();
+	return 0;
+}
