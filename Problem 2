@@ -1,0 +1,72 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	const int waterDemandCharge = 35, lateCharge = 20;
+	const double consumptionCharge = 1.10;
+	char settlement;
+	double monthlyBill, consumptionCurrentMonth, consumptionPreviousMonth, unpaidBalance;
+
+	cout <<"|Water Bill Calculator|";
+	cout << endl;
+	cout << endl;
+	cout <<"Have you settled your water bill from the previous month already? (Y/N)\n";
+	cin >> settlement;
+	cout << endl;
+
+	if (settlement == 'y')
+	{
+		consumptionPreviousMonth = 0;
+		cout <<"Please enter the amount of water which you have consumed this month in gallons: ";
+		cin >> consumptionCurrentMonth;
+	}
+	else if (settlement == 'Y')
+	{
+		consumptionPreviousMonth = 0;
+		cout <<"Please enter the amount of water which you have consumed this month in gallons: ";
+		cin >> consumptionCurrentMonth;
+	}
+	else if (settlement == 'n')
+	{
+		cout <<"Please enter the amount of water which you have consumed the previous month: ";
+		cin >> consumptionPreviousMonth;
+		cout <<"Please enter the amount of water which you have consumed this month in gallons: ";
+		cin >> consumptionCurrentMonth;
+		cout << endl;
+		cout << endl;
+		cout << "*An additional charge of PhP 20 has been added to your bill for not having been able to settle your previous month's bill sooner.*";
+	}
+	else if (settlement == 'N')
+	{
+		cout <<"Please enter the amount of water which you have consumed the previous month: ";
+		cin >> consumptionPreviousMonth;
+		cout <<"Please enter the amount of water which you have consumed this month in gallons: ";
+		cin >> consumptionCurrentMonth;
+		cout << endl;
+		cout << endl;
+		cout << "*An additional charge of PhP 20 has been added to your bill for not having been able to settle your previous month's bill sooner.*";
+	}
+	else
+	{
+		cout <<"Invalid input! Please choose only between the two options which corresponds to your answer (Y/N).";
+		_getch();
+		return 0;
+	}
+
+	if (consumptionPreviousMonth <= 0)
+		unpaidBalance = 0;
+	else if (consumptionPreviousMonth > 0)
+		unpaidBalance = 1;
+
+	monthlyBill = waterDemandCharge + ((consumptionCurrentMonth + consumptionPreviousMonth) * consumptionCharge) + (unpaidBalance * lateCharge);
+
+	cout << endl;
+	cout << endl;
+	cout <<"[Your calculated water bill for this month is: PhP "<< monthlyBill <<"]";
+
+	_getch();
+	return 0;
+}
