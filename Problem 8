@@ -1,0 +1,23 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int number, multiplier;
+
+	cout <<"Please enter a number: ";
+	cin >> number;
+	cout << endl;
+	cout <<"Multiplication table of " << number <<":";
+	cout << endl;
+
+	for (multiplier = 1; multiplier <= 10; multiplier ++)
+	{
+		cout << multiplier <<" * " << number <<" = " << multiplier * number << endl;
+	}
+
+	_getch();
+	return 0;
+}
