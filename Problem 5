@@ -1,0 +1,26 @@
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	int counter;
+
+	cout <<"Counting...";
+	cout << endl;
+	cout << endl;
+
+	for (counter = 1; counter <= 30; counter ++)
+	{
+		if (counter == 30)
+			cout << counter;
+		if (counter > 10 && counter % 2 != 0 || counter == 30)
+			continue;
+			cout << counter << ", ";				
+	}
+	
+		_getch();
+		return 0;
+}
