@@ -1,0 +1,35 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int firstNumber, secondNumber, thirdNumber, largestNumber;
+	
+	cout <<"Please input three numbers from your keyboard.";
+
+	cout << endl;
+	cout << endl;
+
+	cout <<"Please enter the value of your first number: ";
+	cin >> firstNumber;
+	cout <<"Please enter the value of your second number: ";
+	cin >> secondNumber;
+	cout <<"Please enter the value of your third number: ";
+	cin >> thirdNumber;
+
+	if (firstNumber >= secondNumber && firstNumber >= thirdNumber)
+		largestNumber = firstNumber;
+	else if (secondNumber >= firstNumber && secondNumber >= thirdNumber)
+		largestNumber = secondNumber;
+	else if (thirdNumber >= firstNumber && thirdNumber >= secondNumber)
+		largestNumber = thirdNumber;
+
+	cout << endl;
+	cout << endl;
+	cout <<"The number with the highest value among the three is: " << largestNumber;
+
+	_getch();
+	return 0;
+}
