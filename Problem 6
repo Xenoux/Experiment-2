@@ -1,0 +1,28 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int fibonacciNumber1 = 0, fibonacciNumber2 = 1, fibonacciNumbern, fibonacciNumber;
+
+	for (fibonacciNumber = 0; fibonacciNumber <= 21; fibonacciNumber ++)
+	{
+		if (fibonacciNumber <= 1)
+			fibonacciNumbern = fibonacciNumber;
+		else
+		{
+			fibonacciNumbern = fibonacciNumber1 + fibonacciNumber2;
+			fibonacciNumber1 = fibonacciNumber2;
+			fibonacciNumber2 = fibonacciNumbern;
+		}
+		if (fibonacciNumber == 21)
+			cout << fibonacciNumbern;
+		else if (fibonacciNumber < 21)
+			cout << fibonacciNumbern << ", ";
+	}
+
+	_getch();
+	return 0;
+}
