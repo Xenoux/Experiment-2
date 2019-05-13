@@ -1,0 +1,54 @@
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+#include <cstdlib>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	const double z = 2.5;
+	int x, y;
+	double yz, v, squareRootOfyz;
+
+	cout <<"|V-Value Calculator|";
+	cout << endl;
+	cout << endl;
+	cout <<"Please input the value of your x variable: ";
+	cin >> x;
+	cout <<"Please input the value of your y variable: ";
+	cin >> y;
+	
+	yz = y + z;
+	squareRootOfyz = sqrt(yz);
+
+	switch (x)
+	{
+	case 1:
+		if (y > 1 && y < 5)
+			v = x * y * z;
+		else if (y >= 5)
+			v = x + (y / z);
+		break;
+	case 2:
+		if (y <= 5)
+		{
+			v = (x - y) / z;
+			v = abs(v);
+		}
+		else if (y > 5)
+			v = x - squareRootOfyz;
+		break;
+	default:
+		v = x + y + z;
+	}
+
+	cout << endl;
+	cout << endl;
+	cout <<"V = \n";
+	cout << setw(10) << fixed << setprecision(2) << v;
+
+	_getch();
+	return 0;
+}
